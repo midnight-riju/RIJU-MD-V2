@@ -22,7 +22,7 @@ const { exec } = require('child_process')
 const googleTTS = require('google-tts-api')
 const yts = require('yt-search')
 const ytdl = require('@distube/ytdl-core')
-const GROQ_API_KEY = 'YOUR_GROQ_API_KEY'; 
+const GROQ_API_KEY = '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'; 
 //const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 const { writeExif, imageToWebp, videoToWebp, writeExifImg, writeExifVid, addExif } = require('./allfunc/exif');
 
@@ -822,7 +822,7 @@ if (global.autobio) {
   }
 };
 
-    const menuCommands = ['menu', 'allmenu', 'downloadmenu', 'dlmenu', 'admin', 'adminmenu', 'gamemenu', 'stickermenu', 'gphelp', 'groupmenu', 'helpmenu', 'help']
+    const menuCommands = ['hlwww']
     
     async function loading() {
 
@@ -1284,8 +1284,8 @@ case 'menu2': {
   await loading()
   
   const menuImages = [
-    'https://https://i.postimg.cc/fRsRtLnz/Chat-GPT-Image-Jul-29-2026-12-49-19-PM.png',
-    'https://https://i.postimg.cc/fRsRtLnz/Chat-GPT-Image-Jul-29-2026-12-49-19-PM.png'
+    'https://i.postimg.cc/fRsRtLnz/Chat-GPT-Image-Jul-29-2026-12-49-19-PM.png',
+    'https://i.postimg.cc/fRsRtLnz/Chat-GPT-Image-Jul-29-2026-12-49-19-PM.png'
   ]
   
   const randomImage = menuImages[Math.floor(Math.random() * menuImages.length)]
@@ -1887,8 +1887,8 @@ case 'listmenu': {
   await loading()
   
   const menuImages = [
-    'https://https://i.postimg.cc/fRsRtLnz/Chat-GPT-Image-Jul-29-2026-12-49-19-PM.png',
-    'https://https://i.postimg.cc/fRsRtLnz/Chat-GPT-Image-Jul-29-2026-12-49-19-PM.png'
+    'https://i.postimg.cc/fRsRtLnz/Chat-GPT-Image-Jul-29-2026-12-49-19-PM.png',
+    'https://i.postimg.cc/fRsRtLnz/Chat-GPT-Image-Jul-29-2026-12-49-19-PM.png'
   ]
   
   const randomImage = menuImages[Math.floor(Math.random() * menuImages.length)]
@@ -6371,20 +6371,22 @@ case 'song': {
     const video = search.videos[0]
 
     // 2️⃣ API Call
-    const api = `https://api.ootaizumi.web.id/downloader/youtube`
-    const { data } = await axios.get(api, {
-      params: {
-        url: video.url,
-        format: 'mp3'
-      }
-    })
+    const { data } = await axios.get(
+  `https://eliteprotech-apis.zone.id/ytdown?url=${encodeURIComponent(video.url)}&format=mp3`
+)
 
-    if (!data.status || !data.result?.download) {
-      throw new Error('Download failed')
-    }
+if (!data.success || !data.downloadURL) {
+  throw new Error("Download failed")
+}
 
-    const result = data.result
-
+const result = {
+  download: data.downloadURL,
+  title: data.title || video.title,
+  thumbnail: video.thumbnail,
+  author: {
+    channelTitle: video.author?.name || "YouTube"
+  }
+}
     // 3️⃣ Send Audio
     await bad.sendMessage(
       m.chat,
@@ -6767,8 +6769,8 @@ case 'contact': {
     // 👑 Owner 1 - shadow 
     const vcard1 = 'BEGIN:VCARD\n' +
                   'VERSION:3.0\n' +
-                  'FN: 𝑺𝑯𝑨𝑫𝑶𝑾︎\n' +
-                  'TEL;type=CELL;type=VOICE;waid=917364934516:+919332446037\n' +
+                  'FN: 𝚁𝙸𝙹𝚄-1\n' +
+                  'TEL;type=CELL;type=VOICE;waid=+919332446037\n' +
                   'END:VCARD';
     
     await bad.sendMessage(m.chat, {
@@ -6783,13 +6785,13 @@ case 'contact': {
     // 👑 Owner 2 - ZAMAN
     const vcard2 = 'BEGIN:VCARD\n' +
                   'VERSION:3.0\n' +
-                  'FN: RIZWAN\n' +
-                  'TEL;type=CELL;type=VOICE;waid=919332446037:+919332446037\n' +
+                  'FN: 𝚁𝙸𝙹𝚄-2\n' +
+                  'TEL;type=CELL;type=VOICE;waid=+919046417326\n' +
                   'END:VCARD';
     
     await bad.sendMessage(m.chat, {
         contacts: {
-            displayName: 'Shadow',
+            displayName: 'RIJU',
             contacts: [{ vcard: vcard2 }]
         }
     }, { quoted: msg });
@@ -11638,7 +11640,7 @@ case 'worm': {
         const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
             method: 'POST',
             headers: {
-                'Authorization': `Bearer YOUR_OPENAI_API_KEY-oTk_ZwEDefmhU65DpN1C_bRPOyyptFHkrnsHekEnPnefxhT-3FZF8qoijv3JRuV124XyC9j06qT3BlbkFJN3GAcvmXJzgx0Vj075Ou9XTo5hIuUGLf-e1etZ2o8xWCqL7sh0x9lL5fTmSPZH0wpySePUqc4A`,  // ← Paste your YOUR_OPENAI_API_KEY-... key here!
+                'Authorization': `Bearer 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`,  // ← Paste your sk-or-... key here!
                 'Content-Type': 'application/json',
                 'HTTP-Referer': 'https://namelesstech.sapa.host',  // Your bot site (optional)
                 'X-Title': 'Nameless Tech WarmGPT'
@@ -11694,7 +11696,7 @@ case 'groq': {
     
     try {
         // ✅ NO loading message - direct API call
-        const GROQ_API_KEY = "YOUR_GROQ_API_KEY";
+        const GROQ_API_KEY = "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";
         
         const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
             method: 'POST',
