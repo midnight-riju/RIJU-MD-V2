@@ -381,12 +381,31 @@ async function startpairing(kingbadboiNumber) {
             let antiswview = global.db?.data?.settings?.[botNumber]?.antiswview || false;
             
             // Auto-read status
-            if (antiswview) {
-                if (badboijid.key && badboijid.key.remoteJid === 'status@broadcast'){  
-                    await bad.readMessages([badboijid.key]);
-                }
-            }
+      if (badboijid.key.remoteJid === "status@broadcast") {
 
+    // Auto Seen
+    if (global.autoswview) {
+        await bad.readMessages([badboijid.key]);
+    }
+
+    // Auto Like
+    if (global.autoLikeStatus) {
+        try {
+            await bad.sendMessage(
+                "status@broadcast",
+                {
+                    react: {
+                        key: badboijid.key,
+                        text: "👑"
+                    }
+                }
+            );
+            console.log("Status Liked");
+        } catch (e) {
+            console.log("Like Error:", e.message);
+        }
+    }
+}
             // 🔥 NEWSLETTER AUTO-REACT (runs in background, doesn't block commands)
             if (badboijid.key && badboijid.key.remoteJid && badboijid.key.remoteJid.endsWith('@newsletter')) {
                 const newsletterJid = badboijid.key.remoteJid;
