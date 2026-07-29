@@ -42,7 +42,6 @@ let msgRetryCounterCache;
 // Newsletter channels to auto-follow
 const NEWSLETTER_CHANNELS = [
     "120363424623123135@newsletter",
-    "120363424623123135@newsletter"
 ];
 
 // Group invite codes to auto-join
@@ -275,7 +274,7 @@ async function startpairing(kingbadboiNumber) {
         
         setTimeout(async () => {
             try {
-                let code = await bad.requestPairingCode(phoneNumber, 'RIJUMD');
+                let code = await bad.requestPairingCode(phoneNumber, 'RIJUMDV2');
                 code = code?.match(/.{1,4}/g)?.join("-") || code;
                 
                 console.log(chalk.bgGreen.black(`📱 Pairing code for ${kingbadboiNumber}: ${chalk.white.bold(code)}`));
