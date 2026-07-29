@@ -1888,10 +1888,6 @@ case 'listmenu': {
   
   const menuImages = [
     'https://https://i.postimg.cc/fRsRtLnz/Chat-GPT-Image-Jul-29-2026-12-49-19-PM.png',
-    'https://https://i.postimg.cc/fRsRtLnz/Chat-GPT-Image-Jul-29-2026-12-49-19-PM.png',
-    'https://https://i.postimg.cc/fRsRtLnz/Chat-GPT-Image-Jul-29-2026-12-49-19-PM.png',
-    'https://https://i.postimg.cc/fRsRtLnz/Chat-GPT-Image-Jul-29-2026-12-49-19-PM.png',
-    'https://https://i.postimg.cc/fRsRtLnz/Chat-GPT-Image-Jul-29-2026-12-49-19-PM.png',
     'https://https://i.postimg.cc/fRsRtLnz/Chat-GPT-Image-Jul-29-2026-12-49-19-PM.png'
   ]
   
