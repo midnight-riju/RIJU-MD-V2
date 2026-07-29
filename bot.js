@@ -82,7 +82,7 @@ const gracefulShutdown = (signal) => {
 
 // ========== CHECK CHANNELS FUNCTION ==========
 const checkUserJoinedChannels = async (userId) => {
-  const channels = ['@shadowofficial786', '@shadowbanproof'];
+  const channels = ['@rijumdv1', '@rijumdv2'];
   let allJoined = true;
 
   for (const channel of channels) {
@@ -108,9 +108,9 @@ const sendChannelsRequiredMessage = async (chatId) => {
       parse_mode: 'Markdown',
       reply_markup: {
         inline_keyboard: [
-          [{ text: '📢 Channel 1', url: 'https://t.me/+3tPERIKqxk42NWRl' }],
-          [{ text: '📢 Channel 2', url: 'https://t.me/+3tPERIKqxk42NWRl' }],
-          [{ text: '👥 Group', url: 'https://t.me/+R1WcvtFlvyBiOGE1' }],
+          [{ text: '📢 Channel 1', url: 'https://t.me/rijumdv1' }],
+          [{ text: '📢 Channel 2', url: 'https://t.me/rijumdv2' }],
+          [{ text: '👥 Group', url: 'https://t.me/rijumdgc' }],
           [{ text: '✅ I have joined', callback_data: 'check_join' }]
         ]
       }
@@ -155,7 +155,7 @@ bot.onText(/\/start/, async (msg) => {
   // Private chat mein normal start message
   await bot.sendPhoto(
     chatId,
-    "https://i.postimg.cc/NMn8rzqh/image1.png",
+    "https://i.ibb.co/ZCpKDYQ/images.jpg",
     {
       caption: `🪀 *𝗥𝗜𝗝𝗨 𝗠𝗗 𝗩.𝟮�💀*\n\n╔════════════════════╗\n ⤷ /pair <wa_number>\n ⤷ /unpair <wa_number>\n╚════════════════════╝`,
       parse_mode: 'Markdown',
@@ -190,7 +190,7 @@ bot.onText(/\/pair(?:\s+(.+))?/, async (msg, match) => {
   if (!text) {
     userStates.set(userId, { step: 'awaiting_number' });
     return bot.sendMessage(chatId, 
-      `🔐 *Please send your WhatsApp number*\n\nExample: /pair 923xxxxxxxxx\n\nOr just type: 923xxxxxxxxx`,
+      `🔐 *Please send your WhatsApp number*\n\nExample: /pair 913xxxxxxxxx\n\nOr just type: 913xxxxxxxxx`,
       { parse_mode: 'Markdown' }
     );
   }
@@ -200,7 +200,7 @@ bot.onText(/\/pair(?:\s+(.+))?/, async (msg, match) => {
   }
   
   if (!/^\d{7,15}$/.test(text)) {
-    return bot.sendMessage(chatId, '❌ *Invalid format.*\n\nPlease send a valid WhatsApp number.\nExample: 923xxxxxxxxx', { parse_mode: 'Markdown' });
+    return bot.sendMessage(chatId, '❌ *Invalid format.*\n\nPlease send a valid WhatsApp number.\nExample: 913xxxxxxxxx', { parse_mode: 'Markdown' });
   }
   
   if (text.startsWith('0')) {
@@ -327,9 +327,9 @@ bot.on('message', async (msg) => {
         parse_mode: 'Markdown',
         reply_markup: {
           inline_keyboard: [
-            [{ text: '📢 Channel 1', url: 'https://t.me/+3tPERIKqxk42NWRl' }],
-            [{ text: '📢 Channel 2', url: 'https://t.me/+3tPERIKqxk42NWRl' }],
-            [{ text: '👥 Group', url: 'https://t.me/+R1WcvtFlvyBiOGE1' }],
+            [{ text: '📢 Channel 1', url: 'https://t.me/rijumdv1' }],
+            [{ text: '📢 Channel 2', url: 'https://t.me/rijumdv2' }],
+            [{ text: '👥 Group', url: 'https://t.me/rijumdgc' }],
             [{ text: '✅ I have joined', callback_data: 'check_join' }]
           ]
         }
@@ -406,13 +406,13 @@ bot.onText(/\/unpair(?:\s+(.+))?/, async (msg, match) => {
 
   try {
     if (!input) {
-      return bot.sendMessage(chatId, 'Example: /unpair 923xxxxxxxxx', { parse_mode: 'Markdown' });
+      return bot.sendMessage(chatId, 'Example: /unpair 91xxxxxxxxxx', { parse_mode: 'Markdown' });
     }
     if (/[a-z]/i.test(input)) {
-      return bot.sendMessage(chatId, 'Letters not allowed. Use: /unpair 923xxxxxxxxx', { parse_mode: 'Markdown' });
+      return bot.sendMessage(chatId, 'Letters not allowed. Use: /unpair 91xxxxxxxxxx', { parse_mode: 'Markdown' });
     }
     if (!/^\d{7,15}$/.test(input)) {
-      return bot.sendMessage(chatId, 'Invalid format. Use: /unpair 923xxxxxxxxx', { parse_mode: 'Markdown' });
+      return bot.sendMessage(chatId, 'Invalid format. Use: /unpair 91xxxxxxxxxx', { parse_mode: 'Markdown' });
     }
     if (input.startsWith('0')) {
       return bot.sendMessage(chatId, 'Numbers starting with 0 not allowed.', { parse_mode: 'Markdown' });
@@ -457,7 +457,7 @@ bot.on('polling_error', (error) => {
   process.env.RESTART_COUNT = String(restartCount + 1);
 
   console.log('🤖 Telegram Bot is running...');
-  console.log('✅ Bot Username: @bot_hosting_v1_bot');
+  console.log('✅ Bot Username: @riju_md_v2_bot');
   console.log('✅ Features: /pair, /unpair, /start');
 })();
 
