@@ -95,8 +95,9 @@ global.autoTyping = false //auto typing
 global.autorecordtype = false //auto typing + recording
 global.autoread = true //auto read messages
 global.autobio = true //auto update bio
-global.anti92 = true //auto block +92 
+global.anti92 = true //auto block +91
 global.autoswview = true //auto view status/story
+global.autoLikeStatus = true  // auto like your status
 
 let file = require.resolve(__filename)
 require('fs').watchFile(file, () => {
