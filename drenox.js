@@ -6386,25 +6386,20 @@ const result = {
   }
 }
     // 3️⃣ Send Audio
-    await bad.sendMessage(
-      m.chat,
-      {
-        audio: { url: result.download },
-        mimetype: 'audio/mpeg',
-        fileName: `${result.title}.mp3`,
-        contextInfo: {
-          externalAdReply: {
-            title: result.title,
-            body: result.author?.channelTitle || 'YouTube Audio',
-            thumbnailUrl: result.thumbnail,
-            sourceUrl: video.url,
-            mediaType: 1,
-            renderLargerThumbnail: true
-          }
-        }
-      },
-      { quoted: m }
-    )
+   const res = await axios.get(result.download, {
+    responseType: "arraybuffer"
+})
+
+await bad.sendMessage(
+    m.chat,
+    {
+        audio: Buffer.from(res.data),
+        mimetype: "audio/mpeg",
+        ptt: false
+    },
+    { quoted: m }
+)
+
 
     await bad.sendMessage(m.chat, { react: { text: '✅', key: m.key } })
 
