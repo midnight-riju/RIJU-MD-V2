@@ -3215,7 +3215,7 @@ case 'alive': {
   const uptime = runtime(process.uptime());
   reply(
 `🟢 *Bot Status:* ONLINE
-👑 *Owner:* ༒︎ 𝑺𝑯𝑨𝑫𝑶𝑾 ༒︎
+👑 *Owner:* RIJU BISWAS
 ⏱️ *Uptime:* ${uptime}`
   );
 }
